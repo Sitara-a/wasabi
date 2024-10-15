@@ -147,7 +147,13 @@ public class UserRole {
 
     @Override
     public int hashCode() {
-        return HashCodeBuilder.reflectionHashCode(this);
+        return new HashCodeBuilder().append(this.getApplicationName())
+                .append(this.getRole())
+                .append(this.getUserID())
+                .append(this.getUserEmail())
+                .append(this.getFirstName())
+                .append(this.getLastName())
+                .toHashCode();
     }
 
     @Override
